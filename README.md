@@ -1,4 +1,4 @@
-# Star Wars characters explorer
+# Star Wars characters viewer
 
 React and TypeScript Single Page Application (SPA) using the Star Wars API (https://swapi.dev/) as the data source. The application consists of two pages.
 
