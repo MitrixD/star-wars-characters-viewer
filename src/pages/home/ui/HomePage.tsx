@@ -85,7 +85,6 @@ export const HomePage: React.FC = () => {
         justifyContent="center"
         className={styles.characterContainer}
       >
-        {/* Render characters and total pages when data is available */}
         {!loading && (
           <Grid
             className={styles.characterGrid}
@@ -114,7 +113,6 @@ export const HomePage: React.FC = () => {
           </Grid>
         )}
 
-        {/* Render loading indicator in the center */}
         {loading && (
           <Grid
             container
@@ -122,7 +120,7 @@ export const HomePage: React.FC = () => {
             alignItems="center"
             className={styles.loadingContainer}
           >
-            <CircularProgress />
+            <CircularProgress data-testid={'loading-indicator'} />
           </Grid>
         )}
       </Grid>

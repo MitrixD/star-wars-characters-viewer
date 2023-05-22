@@ -4,6 +4,9 @@ node_modules/
 # Ignore build output directory
 /build
 
+# Ignore coverage output directory
+/coverage
+
 # Ignore IDE and editor files
 .vscode/
 .idea/

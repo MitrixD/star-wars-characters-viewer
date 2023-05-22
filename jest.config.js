@@ -1,8 +1,19 @@
 module.exports = {
-  roots: ['<rootDir>/src'],
-  testMatch: ['**/__tests__/**/*.+(ts|tsx|js)'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  preset: 'ts-jest',
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.(js|jsx)$': 'babel-jest',
+  },
+  testEnvironment: 'jsdom',
+  transformIgnorePatterns: ['/node_modules/(?!axios)', '\\.css$'],
+  moduleNameMapper: {
+    '\\.(css|less)$': 'identity-obj-proxy',
+  },
+  extensionsToTreatAsEsm: ['.tsx', '.ts'],
+  globals: {
+    'ts-jest': {
+      useESM: true,
+    },
   },
 };

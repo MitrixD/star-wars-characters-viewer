@@ -48,6 +48,9 @@ export const CharacterDetailsCard: React.FC<CharacterDetailsCardProps> = ({
         {characterTextFields.map((field) => (
           <Grid item xs={12} key={field.name}>
             <TextField
+              inputProps={{
+                'data-testid': `${field.name}-field`,
+              }}
               key={field.name}
               name={field.name}
               label={field.label}

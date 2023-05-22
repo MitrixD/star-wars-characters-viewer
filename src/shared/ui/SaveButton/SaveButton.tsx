@@ -17,8 +17,9 @@ export const SaveButton: FC<SaveButtonProps> = ({ handleSaveClick }) => (
     }}
     size={'large'}
     startIcon={<SaveIcon />}
-    fullWidth
     onClick={handleSaveClick}
+    data-testid={'save-button'}
+    fullWidth
   >
     Save
   </Button>

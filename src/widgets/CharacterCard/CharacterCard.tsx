@@ -18,7 +18,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 
 export const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
   return (
-    <StyledCard sx={{ height: '100%' }}>
+    <StyledCard sx={{ height: '100%' }} data-testid={'character-card'}>
       <Card sx={{ height: '100%' }}>
         <CardContent className="flex justify-center items-center">
           <CharacterAvatarIcon
@@ -30,7 +30,12 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
             }}
           />
           <Divider sx={{ width: '100%', marginY: 1 }} />
-          <Typography variant="h6" component="div" textAlign="center">
+          <Typography
+            data-testid={'character-card-name-label'}
+            variant="h6"
+            component="div"
+            textAlign="center"
+          >
             {character.name}
           </Typography>
         </CardContent>

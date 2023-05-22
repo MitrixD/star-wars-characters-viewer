@@ -38,16 +38,21 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
           handleSearch();
         }
       }}
+      inputProps={{ 'data-testid': 'search-input' }}
+      data-testid={'search-bar'}
       placeholder="Search characters"
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">
             {searchTerm && (
-              <IconButton onClick={handleClear}>
+              <IconButton
+                data-testid={'clear-search-button'}
+                onClick={handleClear}
+              >
                 <ClearIcon />
               </IconButton>
             )}
-            <IconButton onClick={handleSearch}>
+            <IconButton data-testid={'search-button'} onClick={handleSearch}>
               <SearchIcon />
             </IconButton>
           </InputAdornment>

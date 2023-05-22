@@ -13,6 +13,7 @@ export const BackToHomeButton = () => (
       left: 10,
       color: 'black',
     }}
+    data-testid={'back-button'}
   >
     <ArrowBackIcon
       sx={{

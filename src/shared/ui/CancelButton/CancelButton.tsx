@@ -17,8 +17,9 @@ export const CancelButton: FC<CancelButtonProps> = ({ handleCancelClick }) => (
     }}
     size={'large'}
     variant="outlined"
-    fullWidth
     onClick={handleCancelClick}
+    data-testid={'cancel-button'}
+    fullWidth
   >
     Cancel
   </Button>

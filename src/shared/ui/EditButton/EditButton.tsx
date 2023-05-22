@@ -18,6 +18,7 @@ export const EditButton: FC<EditButtonProps> = ({ handleEditClick }) => (
     variant="contained"
     startIcon={<EditIcon />}
     onClick={handleEditClick}
+    data-testid={'edit-button'}
     fullWidth
   >
     Edit
