@@ -19,6 +19,7 @@ The project utilizes the following technologies and frameworks:
 - Material UI
 - Tailwind CSS
 - Jest
+- Feature Sliced Design
 
 ## Installation
 
