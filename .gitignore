@@ -7,6 +7,8 @@ node_modules/
 # Ignore coverage output directory
 /coverage
 
+/dist
+
 # Ignore IDE and editor files
 .vscode/
 .idea/

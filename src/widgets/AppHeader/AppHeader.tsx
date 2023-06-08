@@ -1,10 +1,9 @@
 import React from 'react';
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+import { HOME_PAGE } from '../../pages/home';
 // @ts-ignore
 import appBarLogoImage from '../../shared/assets/logo1234.png';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import styles from './AppHeader.module.css';
 
@@ -17,7 +16,7 @@ export const AppHeader: React.FC = () => {
     >
       <Toolbar sx={{ justifyContent: 'center' }}>
         <Box className={styles.logoContainer}>
-          <Button component={Link} to="/" sx={{ marginRight: 2 }}>
+          <Button component={Link} to={HOME_PAGE} sx={{ marginRight: 2 }}>
             <img
               src={appBarLogoImage}
               alt="Big Image"

@@ -1,9 +1,7 @@
 import React from 'react';
 import { SvgIcon } from '@mui/material';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-export const CharacterAvatarIcon = (props) => {
+export const CharacterAvatarIcon = (props: any) => {
   return (
     <SvgIcon {...props} viewBox="0 0 1024 1024">
       <g

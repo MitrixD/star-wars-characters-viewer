@@ -6,7 +6,8 @@ import { CircularProgress, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { getIdFromUrl } from '../../../shared/lib/getIdFromUrl';
 import { useHomePage } from '../../../shared/lib/useHomePage';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+import { CHARACTER_DETAILS_PAGE } from '../../characterDetails';
+import { HOME_PAGE } from '../model/consts';
 // @ts-ignore
 import styles from './HomePage.module.css';
 
@@ -21,7 +22,7 @@ export const HomePage: React.FC = () => {
   } = useHomePage();
 
   return (
-    <Grid container spacing={3}>
+    <Grid container justifyItems="center" justifyContent="center" spacing={3}>
       <Grid item xs={12} className={styles.searchBar}>
         <SearchBar onSearch={handleSearch} />
       </Grid>
@@ -50,7 +51,9 @@ export const HomePage: React.FC = () => {
                 key={character.name}
               >
                 <Link
-                  to={`/character/${getIdFromUrl(character.url)}`}
+                  to={`${HOME_PAGE}${CHARACTER_DETAILS_PAGE}/${getIdFromUrl(
+                    character.url
+                  )}`}
                   style={{ textDecoration: 'none' }}
                 >
                   <CharacterCard character={character} />

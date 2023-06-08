@@ -1,13 +1,20 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { CharacterDetailsPage } from './characterDetails';
-import { HomePage } from './home';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import {
+  CharacterDetailsPage,
+  CHARACTER_DETAILS_PAGE,
+} from './characterDetails';
+import { HOME_PAGE, HomePage } from './home';
 
 export const Routing = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/character/:id" element={<CharacterDetailsPage />} />
+      <Route path={HOME_PAGE} element={<HomePage />} />
+      <Route
+        path={`${HOME_PAGE}${CHARACTER_DETAILS_PAGE}/:id`}
+        element={<CharacterDetailsPage />}
+      />
+      <Route path="*" element={<Navigate to={HOME_PAGE} replace />} />
     </Routes>
   );
 };
