@@ -1,28 +1,12 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
-import { Character } from '../model/types';
-import { getCharacterById } from '../../../shared/api/apiService';
+import React from 'react';
 import { CharacterDetailsCard } from '../../../widgets/CharacterDetailsCard';
 import { Container, Grid, Typography, Skeleton } from '@mui/material';
 import { BackToHomeButton } from '../../../shared/ui/BackToHomeButton/BackToHomeButton';
 import { characterTextFields } from '../../../widgets/CharacterDetailsCard/model/consts';
+import { useCharacterDetails } from '../../../shared/lib/useCharacterDetails';
 
-export const CharacterDetailsPage: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
-  const [character, setCharacter] = useState<Character | null>(null);
-
-  const fetchCharacter = useCallback(async () => {
-    try {
-      const fetchedCharacter = await getCharacterById(id ?? '');
-      setCharacter(fetchedCharacter);
-    } catch (error) {
-      console.log('Failed to fetch character:', error);
-    }
-  }, [id]);
-
-  useEffect(() => {
-    fetchCharacter();
-  }, [fetchCharacter]);
+export const CharacterDetailsPage: React.FC = React.memo(() => {
+  const character = useCharacterDetails();
 
   return (
     <Container maxWidth="sm">
@@ -49,4 +33,6 @@ export const CharacterDetailsPage: React.FC = () => {
       </Grid>
     </Container>
   );
-};
+});
+
+CharacterDetailsPage.displayName = 'CharacterDetailsPage';
