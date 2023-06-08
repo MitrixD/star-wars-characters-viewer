@@ -12,14 +12,17 @@ The Character Details Page provides comprehensive information about a selected c
 
 ## Tech Stack
 
-The project utilizes the following technologies and frameworks:
+The project utilizes the following technologies, frameworks, libs:
 
-- React.js
+- React
 - TypeScript
 - Material UI
 - Tailwind CSS
 - Jest
+- ESLint
+- Prettier
 - Webpack
+- Babel
 - Feature Sliced Design
 
 ## Installation
